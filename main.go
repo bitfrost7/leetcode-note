@@ -1,7 +1,10 @@
 package main
 
-import dynamic_programming "leetcode/dynamic-programming"
+import (
+	"fmt"
+	dynamicprogramming "leetcode/dynamic-programming"
+)
 
 func main() {
-	dynamic_programming.TestMaximalSquare()
+	fmt.Println(dynamicprogramming.TestLongestPalindrome("babad"))
 }
