@@ -1,10 +1,7 @@
 package main
 
-import (
-	"fmt"
-	dynamicprogramming "leetcode/dynamic-programming"
-)
+import "leetcode/greedy"
 
 func main() {
-	fmt.Println(dynamicprogramming.TestLongestPalindrome("babad"))
+	greedy.TestMaxProfit()
 }

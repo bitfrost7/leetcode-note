@@ -1,4 +1,4 @@
-package dynamic_programming
+package greedy
 
 func min(a, b int) int {
 	if a < b {
