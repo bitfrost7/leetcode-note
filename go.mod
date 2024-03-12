@@ -1,3 +1,3 @@
-module leetcode
+module leetcode-note
 
-go 1.19
+go 1.21

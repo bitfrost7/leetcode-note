@@ -1,7 +1,9 @@
 package main
 
-import dynamic_programming "leetcode/dynamic-programming"
+import (
+	"leetcode-note/double-pointer"
+)
 
 func main() {
-	dynamic_programming.TestminDistance()
+	double_pointer.TestMerge()
 }

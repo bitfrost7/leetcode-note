@@ -12,7 +12,8 @@ func collectTheCoins(coins []int, edges [][]int) int {
 		degree[y]++
 	}
 
-	rest, q := n, []int{} // 删除树中所有无金币的叶子节点，直到树中所有的叶子节点都是含有金币的
+	var q []int
+	rest := n // 删除树中所有无金币的叶子节点，直到树中所有的叶子节点都是含有金币的
 	for i := 0; i < n; i++ {
 		if degree[i] == 1 && coins[i] == 0 {
 			q = append(q, i)
@@ -33,7 +34,7 @@ func collectTheCoins(coins []int, edges [][]int) int {
 
 	// 删除树中所有的叶子节点, 连续删除2次
 	for j := 0; j < 2; j++ {
-		q := []int{}
+		var q []int
 		for i := 0; i < n; i++ {
 			if degree[i] == 1 {
 				q = append(q, i)
