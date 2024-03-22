@@ -1,5 +1,12 @@
 package design
 
+// https://leetcode.cn/problems/lru-cache/description/
+// 使用双向链表维护缓存的上一次使用时间：
+//
+// 约定：链表正方向（从头部到尾部）节点按照使用时间排序——越早使用（即久未使用）的节点，越靠近链表尾部
+// 维护：每使用一次缓存，就将该缓存对应的链表节点移动到链表头部；缓存淘汰时，只需要删除尾部节点即可
+// 增加一个map，记录key到链表节点的映射关系; 解决如果只使用双向链表，每次判断key是否存在时，都要遍历链表
+
 type LRUCache struct {
 	size       int
 	capacity   int

@@ -1,4 +1,4 @@
-package preSum
+package presum
 
 import (
 	"fmt"

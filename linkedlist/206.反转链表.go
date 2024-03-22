@@ -1,18 +1,6 @@
-/*
- * @lc app=leetcode.cn id=206 lang=golang
- *
- * [206] 反转链表
- */
 package linkedlist
 
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+// 递归写法
 func reverseList(head *ListNode) *ListNode {
 	//如果当前节点位nil或者为尾节点 则直接返回该节点
 	// 例如 1-> nil 无需翻转
@@ -28,4 +16,22 @@ func reverseList(head *ListNode) *ListNode {
 	return newHead
 }
 
-// @lc code=end
+// 迭代写法
+func reverseList1(head *ListNode) *ListNode {
+	var pre, cur, next *ListNode
+	cur = head
+	for cur != nil {
+		next = cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	return pre
+}
+
+func TestReverseList() {
+	nums := []int{1, 2, 3, 4, 5}
+	list := NewLinkedList(nums)
+	PrintLinkedList(list, "反转前")
+	PrintLinkedList(reverseList1(list), "反转后")
+}

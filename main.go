@@ -1,9 +1,9 @@
 package main
 
 import (
-	"leetcode-note/double-pointer"
+	"leetcode-note/linkedlist"
 )
 
 func main() {
-	double_pointer.TestMerge()
+	linkedlist.TestReverseList()
 }

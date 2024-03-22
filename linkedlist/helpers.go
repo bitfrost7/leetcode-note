@@ -19,7 +19,7 @@ func NewLinkedList(nums []int) *ListNode {
 
 func PrintLinkedList(head *ListNode, name string) {
 	if len(name) > 0 {
-		fmt.Print(name, ":\t")
+		fmt.Print(name, ":")
 	}
 	curr := head
 	for curr != nil {
