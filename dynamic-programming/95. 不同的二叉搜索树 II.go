@@ -19,7 +19,7 @@ func trees(start, end int) {
 		return
 	}
 	if start == end {
-		DP[start][end] = []*TreeNode{&TreeNode{Val: start}}
+		DP[start][end] = []*TreeNode{{Val: start}}
 		return
 	}
 	for i := start; i <= end; i++ {
