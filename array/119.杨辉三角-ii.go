@@ -19,6 +19,9 @@ func getRow(rowIndex int) []int {
 	return row
 }
 
+// 题解：
+// 和杨辉三角相比主要是原地生成， 这样节省空间，核心点在于 原地生成下一组排列时候 需要倒序生成。
+
 func TestGetRow() {
 	fmt.Println("Input: rowIndex = 3")
 	fmt.Println(getRow(3))

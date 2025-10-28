@@ -25,6 +25,9 @@ func generate(numRows int) [][]int {
 	return res
 }
 
+// 题解
+// 难点在于二层循环，各自的起始条件，从第2层开始；每层的第一个和最后一个元素是确定的；
+
 func TestGenerate() {
 	fmt.Println("Input: numRows = 5")
 	fmt.Println(generate(5))
