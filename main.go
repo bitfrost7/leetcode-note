@@ -1,9 +1,9 @@
 package main
 
 import (
-	"leetcode-note/linkedlist"
+	"leetcode-note/array"
 )
 
 func main() {
-	linkedlist.TestReverseList()
+	array.TestRemoveDuplicates()
 }
