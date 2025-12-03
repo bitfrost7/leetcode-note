@@ -1,9 +1,11 @@
 package main
 
 import (
-	"leetcode-note/array"
+	"fmt"
+	"leetcode-note/helpers"
 )
 
 func main() {
-	array.TestRemoveDuplicates()
+	m := helpers.Max(1, 2)
+	fmt.Println(m)
 }

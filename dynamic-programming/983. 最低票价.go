@@ -2,6 +2,7 @@ package dynamic_programming
 
 import (
 	"fmt"
+	. "leetcode-note/helpers"
 )
 
 // https://leetcode.cn/problems/minimum-cost-for-tickets/description/
@@ -19,7 +20,7 @@ func mincostTickets(days []int, costs []int) int {
 	f := make([]int, days[len(days)-1]+1)
 	for i, d := 1, 0; i < len(f); i++ {
 		if i == days[d] {
-			f[i] = min(f[i-1]+costs[0], f[max(0, i-7)]+costs[1], f[max(0, i-30)]+costs[2])
+			f[i] = Min3(f[i-1]+costs[0], f[max(0, i-7)]+costs[1], f[Max(0, i-30)]+costs[2])
 			d++
 		} else {
 			f[i] = f[i-1]

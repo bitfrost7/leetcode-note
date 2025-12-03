@@ -1,6 +1,9 @@
 package dynamic_programming
 
-import "fmt"
+import (
+	"fmt"
+	. "leetcode-note/helpers"
+)
 
 //https://leetcode.cn/problems/paint-house/description/
 // 假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。
@@ -30,7 +33,7 @@ func minCost1(costs [][]int) int {
 	for i := 1; i < len(costs)+1; i++ {
 		r, b, g = costs[i-1][0]+min(b, g), costs[i-1][1]+min(r, g), costs[i-1][2]+min(r, b)
 	}
-	return min(r, b, g)
+	return Min3(r, b, g)
 }
 
 func TestMinCost() {

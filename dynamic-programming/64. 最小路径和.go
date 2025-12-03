@@ -1,6 +1,10 @@
 package dynamic_programming
 
-import "fmt"
+import (
+	"fmt"
+
+	. "leetcode-note/helpers"
+)
 
 /*
 https://leetcode.cn/problems/minimum-path-sum/description
@@ -39,6 +43,6 @@ func TestMinPathSum() {
 		{4, 2, 1},
 	}
 	fmt.Println("网格:")
-	printArr2(grid)
+	PrintArr2(grid)
 	fmt.Println("从左上角到右下角的最小路径和:", minPathSum(grid))
 }

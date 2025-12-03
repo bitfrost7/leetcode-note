@@ -2,6 +2,7 @@ package dynamic_programming
 
 import (
 	"fmt"
+	. "leetcode-note/helpers"
 )
 
 // https://leetcode.cn/problems/solving-questions-with-brainpower/description/
@@ -33,7 +34,7 @@ import (
 func mostPoints(questions [][]int) int64 {
 	f := make([]int64, len(questions)+1)
 	for i := len(questions) - 1; i >= 0; i-- {
-		f[i] = max(f[i+1], int64(questions[i][0])+f[min(len(questions), i+questions[i][1]+1)])
+		f[i] = Max(f[i+1], int64(questions[i][0])+f[min(len(questions), i+questions[i][1]+1)])
 	}
 	return f[0]
 }

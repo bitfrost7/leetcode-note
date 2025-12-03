@@ -1,6 +1,10 @@
 package dynamic_programming
 
-import "fmt"
+import (
+	"fmt"
+
+	. "leetcode-note/helpers"
+)
 
 /*
 https://leetcode.cn/problems/unique-paths-ii/description
@@ -90,6 +94,6 @@ func TestUniquePathsWithObstacles() {
 		{0},
 	}
 	fmt.Println("m x n 网格：")
-	printArr2(obstacleGrid)
+	PrintArr2(obstacleGrid)
 	fmt.Printf("从左上角到右下角一共有 %d 条不同的路径", uniquePathsWithObstacles(obstacleGrid))
 }
