@@ -1,5 +1,10 @@
 package recursion
 
+import (
+	//lint:ignore ST1001 方便使用公共工具
+	. "leetcode-note/helpers"
+)
+
 // 给你一个链表的头节点 head 。
 //
 //移除每个右侧有一个更大数值的节点。

@@ -15,6 +15,9 @@
  */
 package tree
 
+//lint:ignore ST1001 方便使用公共工具
+import . "leetcode-note/helpers"
+
 func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
@@ -27,3 +30,8 @@ func invertTree(root *TreeNode) *TreeNode {
 }
 
 // @lc code=end
+
+func TestInvertTree() {
+	root := NewTreeNode(4, NewTreeNode(2, NewTreeNode(1, nil, nil), NewTreeNode(3, nil, nil)), NewTreeNode(7, NewTreeNode(6, nil, nil), NewTreeNode(9, nil, nil)))
+	PrintTree(invertTree(root))
+}

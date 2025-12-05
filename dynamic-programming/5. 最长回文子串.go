@@ -84,8 +84,10 @@ func expandAroundCenter(s string, start, end int) (int, int) {
 	}
 	return start + 1, end - 1
 }
+
 func TestLongestPalindrome() {
 	s := "cbbd"
 	fmt.Println("origin:", s)
-	fmt.Println("palindrome:", longestPalindrome2(s))
+	fmt.Println("palindrome:", longestPalindrome(s))
+	fmt.Println("palindrome2:", longestPalindrome2(s))
 }

@@ -2,7 +2,7 @@ package dynamic_programming
 
 import (
 	"fmt"
-	//nolint:ST1001
+	//lint:ignore ST1001 方便使用公共工具
 	. "leetcode-note/helpers"
 )
 

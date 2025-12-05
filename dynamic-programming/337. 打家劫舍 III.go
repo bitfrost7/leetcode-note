@@ -1,6 +1,11 @@
 package dynamic_programming
 
-import . "leetcode-note/helpers"
+import (
+	"fmt"
+
+	//lint:ignore ST1001 方便使用公共工具
+	. "leetcode-note/helpers"
+)
 
 // https://leetcode.cn/problems/house-robber-iii/description
 // 小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为 root 。
@@ -30,4 +35,9 @@ func robTree(root *TreeNode) [2]int {
 	do := root.Val + l[0] + r[0]
 	dont := max(l[0], l[1]) + max(r[0], r[1])
 	return [2]int{dont, do}
+}
+
+func TestRobIII() {
+	root := NewTreeNode(3, NewTreeNode(2, nil, NewTreeNode(3)), NewTreeNode(3, nil, NewTreeNode(1)))
+	fmt.Println("robIII:", robIII(root))
 }

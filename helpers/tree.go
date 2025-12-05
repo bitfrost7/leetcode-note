@@ -46,3 +46,8 @@ func printTree(node *TreeNode, prefix string, isRight bool) {
 	printTree(node.Right, newPrefix, false)
 	printTree(node.Left, newPrefix, true)
 }
+
+
+func NewTreeNode(val int, left *TreeNode, right *TreeNode) *TreeNode {
+	return &TreeNode{Val: val, Left: left, Right: right}
+}

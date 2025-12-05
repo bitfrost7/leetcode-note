@@ -1,9 +1,11 @@
 package dynamic_programming
 
 import (
-	"leetcode-note/helpers"
-	. "leetcode-note/helpers"
+	"fmt"
 	"math"
+
+	//lint:ignore ST1001 方便使用公共工具
+	. "leetcode-note/helpers"
 )
 
 // https://leetcode.cn/problems/binary-tree-maximum-path-sum/description
@@ -12,7 +14,7 @@ import (
 // 路径和 是路径中各节点值的总和。
 //
 // 给你一个二叉树的根节点 root ，返回其 最大路径和 。
-func maxPathSum(root *helpers.TreeNode) int {
+func maxPathSum(root *TreeNode) int {
 	maxSum := math.MinInt
 	var dfs func(node *TreeNode) int
 	dfs = func(root *TreeNode) int {
@@ -27,4 +29,8 @@ func maxPathSum(root *helpers.TreeNode) int {
 	}
 	dfs(root)
 	return maxSum
+}
+
+func TestMaxPathSum() {
+	fmt.Println("maxPathSum:", maxPathSum(nil))
 }

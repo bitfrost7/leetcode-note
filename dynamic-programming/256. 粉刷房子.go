@@ -2,6 +2,8 @@ package dynamic_programming
 
 import (
 	"fmt"
+
+	//lint:ignore ST1001 方便使用公共工具
 	. "leetcode-note/helpers"
 )
 

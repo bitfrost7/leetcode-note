@@ -15,6 +15,9 @@
  */
 package tree
 
+//lint:ignore ST1001 方便使用公共工具
+import . "leetcode-note/helpers"
+
 func preorderTraversal(root *TreeNode) []int {
 	stack := []*TreeNode{}
 	res := []int{}
