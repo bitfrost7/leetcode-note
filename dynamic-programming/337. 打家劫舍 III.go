@@ -38,6 +38,6 @@ func robTree(root *TreeNode) [2]int {
 }
 
 func TestRobIII() {
-	root := NewTreeNode(3, NewTreeNode(2, nil, NewTreeNode(3)), NewTreeNode(3, nil, NewTreeNode(1)))
+	root := NewTreeNode(3, NewTreeNode(2, nil, NewTreeNode(3, nil, nil)), NewTreeNode(3, nil, NewTreeNode(1, nil, nil)))
 	fmt.Println("robIII:", robIII(root))
 }
