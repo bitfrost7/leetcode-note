@@ -2,6 +2,7 @@ package dynamic_programming
 
 import (
 	"fmt"
+	//nolint:ST1001
 	. "leetcode-note/helpers"
 )
 
@@ -40,9 +41,5 @@ func TestGenerateTrees() {
 	n := 3
 	fmt.Printf("Input: n=%d\n", n)
 	fmt.Println("组成二叉搜索树:")
-	json, err := trees2JSON(generateTrees(n))
-	if err != nil {
-		return
-	}
-	fmt.Println(json)
+	PrintTrees(generateTrees(n))
 }

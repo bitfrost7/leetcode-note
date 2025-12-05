@@ -37,7 +37,6 @@ func uniquePaths(m int, n int) int {
 			dp[i][j] = dp[i-1][j] + dp[i][j-1]
 		}
 	}
-	printArr2(dp)
 	return dp[n-1][m-1]
 }
 func uniquePaths1(m int, n int) int {

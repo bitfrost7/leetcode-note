@@ -1,5 +1,7 @@
 package linkedlist
 
+import . "leetcode-note/helpers"
+
 func hasCycle(head *ListNode) bool {
 	fast, slow := head, head
 	for fast != nil && fast.Next != nil {

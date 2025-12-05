@@ -1,5 +1,7 @@
 package dynamic_programming
 
+import . "leetcode-note/helpers"
+
 // https://leetcode.cn/problems/house-robber-iii/description
 // 小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为 root 。
 //

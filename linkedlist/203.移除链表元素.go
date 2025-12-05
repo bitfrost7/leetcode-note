@@ -6,6 +6,8 @@
 
 package linkedlist
 
+import . "leetcode-note/helpers"
+
 func removeElements(head *ListNode, val int) *ListNode {
 	pre := &ListNode{}
 	pre.Next = head

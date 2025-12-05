@@ -2,6 +2,7 @@ package dynamic_programming
 
 import (
 	"fmt"
+	"leetcode-note/helpers"
 )
 
 /*
@@ -43,6 +44,6 @@ func TestMinimumTotal() {
 		{1, 2, 3, 4, 5},
 	}
 	fmt.Println("三角形阶梯:")
-	printArr2(triangle)
+	helpers.PrintArr2(triangle)
 	fmt.Println("自顶向下的最小路径和为", minimumTotal(triangle))
 }

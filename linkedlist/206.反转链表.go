@@ -1,5 +1,11 @@
 package linkedlist
 
+import (
+	"fmt"
+	
+	. "leetcode-note/helpers"
+)
+
 // 递归写法
 func reverseList(head *ListNode) *ListNode {
 	//如果当前节点位nil或者为尾节点 则直接返回该节点
@@ -32,6 +38,10 @@ func reverseList1(head *ListNode) *ListNode {
 func TestReverseList() {
 	nums := []int{1, 2, 3, 4, 5}
 	list := NewLinkedList(nums)
+	PrintLinkedList(list, "反转前")
+	PrintLinkedList(reverseList(list), "反转后")
+
+	fmt.Println("递归写法:")
 	PrintLinkedList(list, "反转前")
 	PrintLinkedList(reverseList1(list), "反转后")
 }

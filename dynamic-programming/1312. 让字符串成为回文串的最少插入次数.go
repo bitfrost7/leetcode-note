@@ -49,7 +49,6 @@ func minInsertions(s string) int {
 			}
 		}
 	}
-	printArr2(dp)
 	return minInsert
 }
 

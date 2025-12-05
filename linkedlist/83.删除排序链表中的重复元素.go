@@ -5,6 +5,8 @@
  */
 package linkedlist
 
+import . "leetcode-note/helpers"
+
 // @lc code=start
 /**
  * Definition for singly-linked list.

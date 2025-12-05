@@ -6,6 +6,8 @@
 
 package linkedlist
 
+import . "leetcode-note/helpers"
+
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	pA, pB := headA, headB
 	for pA != pB {
