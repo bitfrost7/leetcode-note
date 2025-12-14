@@ -1,3 +1,4 @@
+// Package array 数组相关的算法练习
 package array
 
 import "fmt"

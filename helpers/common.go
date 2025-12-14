@@ -1,3 +1,4 @@
+// Package helpers 提供通用的辅助函数
 package helpers
 
 import (
@@ -5,7 +6,7 @@ import (
 	"fmt"
 )
 
-// PrintArr 打印任意类型的一维数组
+// PrintAnyArr 打印任意类型的一维数组
 func PrintAnyArr[T any](arr []T) {
 	fmt.Print("[")
 	for i, v := range arr {

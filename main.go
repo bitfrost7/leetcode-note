@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"leetcode-note/helpers"
+	"leetcode-note/array"
 )
 
 func main() {
-	m := helpers.Max(1, 2)
-	fmt.Println(m)
+	array.TestMaxArea()
 }
