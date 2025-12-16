@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	array.TestMaxArea()
+	array.TestThreeSum()
 }
