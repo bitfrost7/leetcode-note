@@ -56,5 +56,8 @@ func TestUniquePaths() {
 	m := 3
 	n := 7
 	fmt.Println("input: m=", m, " n=", n)
+	fmt.Println("func1:")
 	fmt.Printf("从左上角开始，总共有 %d 条路径可以到达右下角。", uniquePaths(m, n))
+	fmt.Println("func2:")
+	fmt.Printf("从左上角开始，总共有 %d 条路径可以到达右下角。", uniquePaths1(m, n))
 }
