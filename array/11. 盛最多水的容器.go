@@ -1,6 +1,9 @@
 package array
 
-import "fmt"
+import (
+	"fmt"
+	. "leetcode-note/helpers"
+)
 
 // description: (https://leetcode.cn/problems//description/)
 // 给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。
@@ -18,7 +21,7 @@ func maxArea(height []int) int {
 	maxWater := 0
 	for l < r {
 		hL, hR := height[l], height[r]
-		minH := min(hL, hR)
+		minH := Min(hL, hR)
 		area := (r - l) * minH
 		if area > maxWater {
 			maxWater = area
@@ -43,10 +46,16 @@ func TestMaxArea() {
 }
 
 // ----- Solution Here -----
-/*
-核心思路: 梯度最缓下降法+双指针
 
-使用双指针法，从数组的两端开始，计算当前容器的面积，并记录最大面积。然后移动较短的那一边的指针，尝试找到更大的面积。重复这个过程直到两个指针相遇。
-移动双指针的过程就是面积下降的过程，我们需要让整个下降过程最慢，因为面积的变化取决于较短边的高度，移动较短边有可能找到更高的边，从而增加面积。
-
-*/
+// 解法：双指针
+//
+// 容器面积 = (r-l) * min(height[l], height[r])。
+// 初始化左右指针 l=0, r=n-1，计算当前面积并更新最大值。
+//
+// 指针移动策略：
+// - 总是移动“较短的那一侧”。因为面积受短板限制，移动长板不可能让 min 变大，宽度还会变小。
+// - 移动短板才有机会找到更高的短板，从而提升面积。
+//
+// 复杂度：
+// - 时间 O(n)
+// - 额外空间 O(1)

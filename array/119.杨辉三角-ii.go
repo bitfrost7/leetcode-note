@@ -8,6 +8,8 @@ import "fmt"
 // 示例 1:
 // 输入: rowIndex = 3
 // 输出: [1,3,3,1]
+
+// ----- Code Here -----
 func getRow(rowIndex int) []int {
 	row := make([]int, rowIndex+1)
 	row[0] = 1
@@ -19,10 +21,21 @@ func getRow(rowIndex int) []int {
 	return row
 }
 
-// 题解：
-// 和杨辉三角相比主要是原地生成， 这样节省空间，核心点在于 原地生成下一组排列时候 需要倒序生成。
-
+// ----- Begin Test -----
 func TestGetRow() {
 	fmt.Println("Input: rowIndex = 3")
 	fmt.Println(getRow(3))
 }
+
+// ----- Solution Here -----
+
+// 解法：一维数组原地更新（倒序）
+//
+// 目标是返回第 rowIndex 行，使用一维数组 row 逐行迭代构建：
+// - row[0] 固定为 1
+// - 第 i 行更新时，为了不覆盖 row[j-1]（上一轮的值），j 必须从 i 倒序到 1：
+//   row[j] = row[j] + row[j-1]
+//
+// 复杂度：
+// - 时间 O(rowIndex^2)
+// - 额外空间 O(rowIndex)

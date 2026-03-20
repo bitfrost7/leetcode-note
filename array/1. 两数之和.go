@@ -40,9 +40,22 @@ func twoSum(nums []int, target int) []int {
 }
 
 // ----- Begin Test -----
-
 func TestTwoSum() {
 	arr := []int{9, 8, 7, 6, 5, 4, 3, 2, 1}
 	fmt.Println("arr:", arr)
 	fmt.Println("twosum is 7: ", twoSum(arr, 7))
 }
+
+// ----- End Test -----
+
+// ----- Solution Here -----
+// 解法：哈希表
+//
+// 遍历数组 nums，对每个元素 v：
+// - 在哈希表中查询是否已出现过 target-v
+// - 若出现过，则返回当前下标和已记录下标
+// - 否则把 v->下标 存入哈希表
+//
+// 复杂度：
+// - 时间 O(n)
+// - 空间 O(n)

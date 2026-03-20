@@ -8,6 +8,8 @@ import "fmt"
 // 示例 1:
 // 输入: numRows = 5
 // 输出: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+
+// ----- Code Here -----
 func generate(numRows int) [][]int {
 	if numRows == 0 {
 		return [][]int{}
@@ -25,10 +27,20 @@ func generate(numRows int) [][]int {
 	return res
 }
 
-// 题解
-// 难点在于二层循环，各自的起始条件，从第2层开始；每层的第一个和最后一个元素是确定的；
-
+// ----- Begin Test -----
 func TestGenerate() {
 	fmt.Println("Input: numRows = 5")
 	fmt.Println(generate(5))
 }
+
+// ----- Solution Here -----
+
+// 解法：动态生成每一行
+//
+// 杨辉三角第 i 行（0-indexed）长度为 i+1：
+// - 每行第一个和最后一个元素固定为 1
+// - 中间位置 j 的值来自上一行：res[i-1][j-1] + res[i-1][j]
+//
+// 复杂度：
+// - 时间 O(numRows^2)
+// - 额外空间 O(numRows^2)（返回结果占用）

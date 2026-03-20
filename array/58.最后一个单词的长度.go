@@ -9,6 +9,8 @@ import "fmt"
 // 示例 1：
 // 输入：s = "Hello World"
 // 输出：5
+
+// ----- Code Here -----
 func lengthOfLastWord(s string) int {
 	for i := len(s) - 1; i >= 0; i-- {
 		if s[i] != ' ' {
@@ -23,12 +25,22 @@ func lengthOfLastWord(s string) int {
 	return 0
 }
 
-// 题解:
-// 这道题关键在于，理解数组索引在题中的含义，i是第一个不为空格的位置索引，j 为第一个为空格的位置索引，相减即为第一个单词的长度
-// 所以 引申出一个定义， 索引相减则为索引左开右闭/左闭右开之间的距离。
-// 同时需要这一特殊情况，倒数第一个字符是空格，倒数最后一个字符是空格，两种特殊情况
-
+// ----- Begin Test -----
 func TestLengthOfLastWord() {
 	fmt.Println("Input: s = \"Hello World\"")
 	fmt.Println(lengthOfLastWord("Hello World"))
+
+	fmt.Println("Input: s = \"   fly me   to   the moon  \"")
+	fmt.Println(lengthOfLastWord("   fly me   to   the moon  "))
 }
+
+// ----- Solution Here -----
+
+// 解法：从右往左扫描
+//
+// 从字符串末尾向左找第一个非空格字符（最后一个单词的末尾 i），
+// 然后继续向左找第一个空格字符（单词前的分隔处 j），返回 i-j 即为长度。
+//
+// 复杂度：
+// - 时间 O(n)
+// - 额外空间 O(1)

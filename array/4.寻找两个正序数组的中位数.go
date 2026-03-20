@@ -1,6 +1,9 @@
 package array
 
-import "fmt"
+import (
+	"fmt"
+	. "leetcode-note/helpers"
+)
 
 // description: (https://leetcode.cn/problems//description/)
 // 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
@@ -44,7 +47,7 @@ func getKthElement(nums1 []int, nums2 []int, k int) int {
 
 		// 边界情况2: k == 1 直接返回两个数组的最小值
 		if k == 1 {
-			return min(nums1[idx1], nums2[idx2])
+			return Min(nums1[idx1], nums2[idx2])
 		}
 
 		// 正常情况
@@ -52,8 +55,8 @@ func getKthElement(nums1 []int, nums2 []int, k int) int {
 		half := k / 2
 
 		// 防止越界
-		newIdx1 := min(idx1+half, len(nums1)) - 1
-		newIdx2 := min(idx2+half, len(nums2)) - 1
+		newIdx1 := Min(idx1+half, len(nums1)) - 1
+		newIdx2 := Min(idx2+half, len(nums2)) - 1
 
 		privot1, privot2 := nums1[newIdx1], nums2[newIdx2]
 		// 2. 排除较小的部分

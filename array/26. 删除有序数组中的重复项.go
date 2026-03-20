@@ -42,12 +42,29 @@ func removeDuplicates(nums []int) int {
 
 // ----- Begin Test -----
 
-func TestRemoveDuplicates() int {
+func TestRemoveDuplicates() {
 	//nums := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
 	nums := []int{1, 1, 2}
 	fmt.Println("原数组:", nums)
-	d := removeDuplicates(nums)
+	k := removeDuplicates(nums)
 	fmt.Println("数组:", nums)
-	fmt.Println(d)
-	return d
+	fmt.Println(k)
 }
+
+// ----- Solution Here -----
+
+// 解法：双指针（快慢指针）原地去重
+//
+// 由于数组有序，重复元素一定相邻。
+// - i 指向“当前已去重部分”的最后一个位置（慢指针）
+// - j 用来扫描数组（快指针）
+//
+// 遍历过程中：
+// - 若 nums[i] == nums[j]：说明是重复元素，j++ 继续扫描
+// - 否则：找到新元素，把它放到 i+1 位置，然后 i++、j++
+//
+// 最终返回 i+1。
+//
+// 复杂度：
+// - 时间 O(n)
+// - 额外空间 O(1)

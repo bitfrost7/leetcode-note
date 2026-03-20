@@ -24,7 +24,7 @@ func threeSum(nums []int) [][]int {
 		if nums[i] > 0 {
 			break
 		}
-		
+
 		// 去重 a：跳过重复的 a。i > 0 确保第一个 a 被处理。
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
@@ -43,7 +43,7 @@ func threeSum(nums []int) [][]int {
 
 				L++
 				R--
-				
+
 				// 跳过重复的 L (b)：新 L 指向的值如果与前一个值相同，则继续移动
 				for L < R && nums[L] == nums[L-1] {
 					L++
@@ -80,3 +80,20 @@ func TestThreeSum() {
 }
 
 // ----- Solution Here -----
+
+// 解法：排序 + 双指针 + 去重
+//
+// 1) 对 nums 排序。
+// 2) 枚举第一个数 nums[i]（固定 a）：
+//    - 若 nums[i] > 0，可提前结束（后面都 >= 0，不可能凑成 0）。
+//    - 若 nums[i] == nums[i-1]，跳过以避免重复解。
+// 3) 对每个 i，用双指针 L=i+1、R=n-1：
+//    sum = nums[i] + nums[L] + nums[R]
+//    - sum == 0：记录解，L++、R-- 并跳过重复值
+//    - sum < 0：L++ 并跳过重复值
+//    - sum > 0：R-- 并跳过重复值
+//
+// 复杂度：
+// - 排序 O(n log n)
+// - 外层枚举 O(n)，内层双指针 O(n)，总计 O(n^2)
+// - 额外空间 O(1)（不计排序栈开销）
